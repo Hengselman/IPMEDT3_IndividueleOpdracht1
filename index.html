@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mogge</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <a-scene id="js--scene">
+      <a-camera id="js--camera">
+        <a-entity
+          id="js--entityCursor"
+          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150;
+          from: 0.1 0.1 0.1; to: 1 1 1;"
+          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000;
+          from: 1 1 1; to: 0.1 0.1 0.1;"
+          animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500;
+          to: 1 1 1;"
+          cursor = "fuse: true; fuseTimeout: 1000"
+          material = "color: black; shader: flat"
+          geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+          position = "0 0 -0.5"
+          raycaster = "objects: .js--interact"
+        ></a-entity>
+      </a-camera>
+
+      <a-sphere class="js--sphere js--interact" color="blue" position="10 -5 -10" radius="1"> </a-sphere>
+      <a-sphere class="js--sphere js--interact" color="red" position="10 -5 -15" radius="1"> </a-sphere>
+      <a-sphere class="js--sphere js--interact" color="yellow" position="10 -5 -20" radius="1"> </a-sphere>
+
+      <!--Teleporteer boxen-->
+      <a-box class="js--place js--interact" color="blue" position="0 0 0"></a-box>
+      <a-box class="js--place js--interact" color="blue" position="-30 0 -35"></a-box>
+      <a-box class="js--place js--interact" color="blue" position="30 0 -35"></a-box>
+      <a-box class="js--place js--interact" color="blue" position="0 0 -60"></a-box>
+
+      <!--Voorste panelen, RIJ 1-->
+      <a-plane class="js--plane" color="grey" position="-7.5 0 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 0 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 0 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 0 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <!--Voorste panelen, RIJ 2-->
+      <a-plane class="js--plane" color="grey" position="-7.5 5 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 5 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 5 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 5 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <!--Voorste panelen, RIJ 3-->
+      <a-plane class="js--plane" color="grey" position="-7.5 10 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 10 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 10 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 10 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <!--Voorste panelen, RIJ 4-->
+      <a-plane class="js--plane" color="grey" position="-7.5 15 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 15 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 15 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 15 -25" rotation="0 0 -90" width="5" height="5"></a-plane>
+
+
+
+      <!--Linker panelen, RIJ 1-->
+      <a-plane class="js--plane" color="grey" position="-10 0 -27.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 0 -32.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 0 -37.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 0 -42.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <!--Linker panelen, RIJ 2-->
+      <a-plane class="js--plane" color="grey" position="-10 5 -27.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 5 -32.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 5 -37.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 5 -42.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <!--Linker panelen, RIJ 3-->
+      <a-plane class="js--plane" color="grey" position="-10 10 -27.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 10 -32.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 10 -37.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 10 -42.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <!--Linker panelen, RIJ 4-->
+      <a-plane class="js--plane" color="grey" position="-10 15 -27.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 15 -32.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 15 -37.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-10 15 -42.5" rotation="0 -90 -90" width="5" height="5"></a-plane>
+
+
+      <!--Rechter panelen, RIJ 1-->
+      <a-plane class="js--plane" color="grey" position="10 0 -27.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 0 -32.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 0 -37.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 0 -42.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <!--Rechter panelen, RIJ 2-->
+      <a-plane class="js--plane" color="grey" position="10 5 -27.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 5 -32.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 5 -37.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 5 -42.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <!--Rechter panelen, RIJ 3-->
+      <a-plane class="js--plane" color="grey" position="10 10 -27.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 10 -32.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 10 -37.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 10 -42.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <!--Rechter panelen, RIJ 4-->
+      <a-plane class="js--plane" color="grey" position="10 15 -27.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 15 -32.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 15 -37.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="10 15 -42.5" rotation="0 90 -90" width="5" height="5"></a-plane>
+
+
+
+      <a-plane class="js--plane" color="grey" position="-7.5 0 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 0 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 0 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 0 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <!--Voorste panelen, RIJ 2-->
+      <a-plane class="js--plane" color="grey" position="-7.5 5 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 5 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 5 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 5 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <!--Voorste panelen, RIJ 3-->
+      <a-plane class="js--plane" color="grey" position="-7.5 10 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 10 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 10 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 10 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <!--Voorste panelen, RIJ 4-->
+      <a-plane class="js--plane" color="grey" position="-7.5 15 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="-2.5 15 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="2.5 15 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+      <a-plane class="js--plane" color="grey" position="7.5 15 -45" rotation="0 180 -90" width="5" height="5"></a-plane>
+
+
+    </a-scene>
+  </body>
+</html>
