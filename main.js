@@ -39,12 +39,14 @@ window.onload = () => {
     }
 
   function mengKleuren() {
-    console.log("Start functie");
     if(gekozenKleur1 == gekozenKleur2){
-      console.log("Dezelfde kleur");
       gemengd.setAttribute("color", gekozenKleur1);
-  } else if (gekozenKleur1 == 'red' && gekozenKleur2 == 'blue') {
+  } else if (gekozenKleur1 == 'red' && gekozenKleur2 == 'blue' || gekozenKleur1 == 'blue' && gekozenKleur2 == 'red') {
       gemengd.setAttribute("color", "purple");
+    } else if (gekozenKleur1 == 'red' && gekozenKleur2 == 'yellow' || gekozenKleur1 == 'yellow' && gekozenKleur2 == 'red') {
+      gemengd.setAttribute("color", "#FF8000");
+    } else if (gekozenKleur1 == 'blue' && gekozenKleur2 == 'yellow' || gekozenKleur1 == 'yellow' && gekozenKleur2 == 'blue') {
+      gemengd.setAttribute("color", "green");
     }
   }
 
