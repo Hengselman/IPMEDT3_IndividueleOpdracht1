@@ -5,6 +5,7 @@ window.onload = () => {
 
   const camera = document.getElementById('js--camera');
   const cursor = document.getElementById('js--entityCursor')
+  const kwast = document.getElementById('js--kwast')
 
   const mengbal1 = document.getElementsByClassName('js--mengbal1');
   const mengbal2 = document.getElementsByClassName('js--mengbal2');
@@ -13,6 +14,8 @@ window.onload = () => {
   const mengplaat2 = document.getElementById('js--mengplaat2');
   const mengbox2 = document.getElementById('js--mengbox2');
   const gemengd = document.getElementById('js--gemengd');
+
+
 
 
 
@@ -50,6 +53,28 @@ window.onload = () => {
     }
   }
 
+  function veranderKwast() {
+    if(brush == 'red'){
+      kwast.setAttribute("src", "#kwastrood-obj");
+      kwast.setAttribute("mtl", "#kwastrood-mtl");
+    } else if (brush == 'blue') {
+      kwast.setAttribute("src", "#kwastblauw-obj");
+      kwast.setAttribute("mtl", "#kwastblauw-mtl");
+    } else if (brush == 'yellow') {
+        kwast.setAttribute("src", "#kwastgeel-obj");
+        kwast.setAttribute("mtl", "#kwastgeel-mtl");
+    } else if (brush == 'purple') {
+      kwast.setAttribute("src", "#kwastpaars-obj");
+      kwast.setAttribute("mtl", "#kwastpaars-mtl");
+    } else if (brush == '#FF8000') {
+        kwast.setAttribute("src", "#kwastoranje-obj");
+        kwast.setAttribute("mtl", "#kwastoranje-mtl");
+    } else if (brush == 'green') {
+        kwast.setAttribute("src", "#kwastgroen-obj");
+        kwast.setAttribute("mtl", "#kwastgroen-mtl");
+    }
+  }
+
 
   for(let i=0; i < planes.length; i++){
     planes[i].onmouseenter = (event) => {
@@ -61,6 +86,7 @@ window.onload = () => {
     spheres[i].onmouseenter = (event) => {
       brush = spheres[i].getAttribute("color");
       cursor.setAttribute("material", "color", brush);
+      veranderKwast();
     }
   }
 
